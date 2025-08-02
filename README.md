@@ -45,7 +45,7 @@ npm install
 
 # Run from Source
 npm start
-```
+
 ## 🧪 Testing & Simulation
 While running the app from the source (`npm start`), you can use the following keyboard shortcuts to simulate different conditions:
 
@@ -61,7 +61,7 @@ While running the app from the source (`npm start`), you can use the following k
 * `6`: Simulates your location as **London** 🎡.
 * `9`: Resets to your **real** IP-based location.
 * `L`: Manually triggers the "Log Location" action.
-
+```
 
 ### Project Documentation
 **For Software:**
@@ -77,7 +77,7 @@ While running the app from the source (`npm start`), you can use the following k
 *The interactive Pika Room, where users can click on Pikachu or use the Thunderbolt action to experience pure joy and electric sounds*
 
 #### Diagrams
-![Data Flow Architecture](https://raw.githubusercontent.com/GowrishankarSMenon/pika-wifi/main/readmeimages/dataflow.png)
+![Data Flow Architecture](https://raw.githubusercontent.com/GowrishankarSMenon/pika-wifi/main/readmeimages/data-flow.png)
 *Data flow architecture showing how Wi-Fi information flows from the OS through the Electron app to the user interface*
 
 ![Project Workflow](https://raw.githubusercontent.com/GowrishankarSMenon/pika-wifi/main/readmeimages/project-workflow.png)
@@ -91,7 +91,14 @@ While running the app from the source (`npm start`), you can use the following k
 N/A (This is a software-only project, but your Wi-Fi router's circuit is doing the heavy lifting)
 
 #### Build Photos
-N/A (Unless you count screenshots of our code as "build photos")
+![Executable File](https://raw.githubusercontent.com/GowrishankarSMenon/pika-wifi/main/readmeimages/build1.jpg)
+*The final executable installer file (Pika Wifi Setup 1.0.0.exe) created using electron-builder, complete with Pikachu icon and "Connecting to Wi-Fi..." ASCII art*
+
+![Installation Location](https://raw.githubusercontent.com/GowrishankarSMenon/pika-wifi/main/readmeimages/build2.jpg)
+*Windows installer setup screen showing the installation destination folder and space requirements (258.9 MB) for the Pika Wifi application*
+
+![Installation Options](https://raw.githubusercontent.com/GowrishankarSMenon/pika-wifi/main/readmeimages/build3.jpg)
+*Final installation configuration screen with user permissions options, showing upgrade handling for existing installations*
 
 ### Project Demo
 #### Video
