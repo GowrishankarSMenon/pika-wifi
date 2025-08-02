@@ -77,7 +77,7 @@ While running the app from the source (`npm start`), you can use the following k
 *The interactive Pika Room, where users can click on Pikachu or use the Thunderbolt action to experience pure joy and electric sounds*
 
 #### Diagrams
-![Data Flow Architecture](https://raw.githubusercontent.com/GowrishankarSMenon/pika-wifi/main/readmeimages/dataflow.png)
+![Data Flow Architecture](https://raw.githubusercontent.com/GowrishankarSMenon/pika-wifi/main/readmeimages/data-flow.png)
 *Data flow architecture showing how Wi-Fi information flows from the OS through the Electron app to the user interface*
 
 ![Project Workflow](https://raw.githubusercontent.com/GowrishankarSMenon/pika-wifi/main/readmeimages/project-workflow.png)
