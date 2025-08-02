@@ -91,10 +91,10 @@ While running the app from the source (`npm start`), you can use the following k
 N/A (This is a software-only project, but your Wi-Fi router's circuit is doing the heavy lifting)
 
 #### Build Photos
-![Executable File](https://raw.githubusercontent.com/GowrishankarSMenon/pika-wifi/main/readmeimages/build1.jpg)
+![Executable File]([https://raw.githubusercontent.com/GowrishankarSMenon/pika-wifi/main/readmeimages/build1.jpg](https://drive.google.com/file/d/1ffQeKaDJaj-iDS6l5SxqKFb8JGQ22TBx/view?usp=sharing))
 *The final executable installer file (Pika Wifi Setup 1.0.0.exe) created using electron-builder, complete with Pikachu icon and "Connecting to Wi-Fi..." ASCII art*
 
-![Installation Location](https://raw.githubusercontent.com/GowrishankarSMenon/pika-wifi/main/readmeimages/build2.jpg)
+![Installation Location](https://drive.google.com/file/d/1ffQeKaDJaj-iDS6l5SxqKFb8JGQ22TBx/view?usp=sharing)
 *Windows installer setup screen showing the installation destination folder and space requirements (258.9 MB) for the Pika Wifi application*
 
 ![Installation Options](https://raw.githubusercontent.com/GowrishankarSMenon/pika-wifi/main/readmeimages/build3.jpg)
