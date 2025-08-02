@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+:root {
+    --primary-bg: #2d2d2d;
+    --secondary-bg: #3c3c3c;
+    --accent-color: #ffc857;
+    --text-color: #e0e0e0;
+    --border-color: #4a4a4a;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+body {
+    background-color: transparent;
+    font-family: 'VT323', monospace;
+    color: var(--text-color);
+    margin: 0;
+    padding: 10px;
+    overflow: hidden;
+    -webkit-app-region: no-drag;
+}
+
+/* --- SPLASH SCREEN STYLES --- */
+#splash-screen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+#pikachu-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#pikachu-sprite {
+    width: 50px;
+    height: 44px;
+    background-image: url('./assets/sprites/spash.png');
+    transform: scale(3);
+    image-rendering: pixelated;
+    animation: pikachu-wave 0.8s steps(4) infinite;
+}
+
+.splash-text {
+    margin-top: 20px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    color: var(--accent-color);
+    text-shadow: 2px 2px 4px #000;
+}
+
+/* --- KEYFRAME ANIMATIONS --- */
+@keyframes pikachu-wave {
+    from { background-position: 0 0; }
+    to { background-position: -200px 0; }
+}
+
+@keyframes pika-idle {
+    from { background-position: 0 0; }
+    to { background-position: -160px 0; }
+}
+
+@keyframes pika-thunderbolt {
+    from { background-position: 0 0; }
+    to { background-position: -126px 0; }
+}
+
+@keyframes lightning-burst {
+    0%, 100% { opacity: 0; }
+    0% { transform: scale(0.8); }
+    33% { transform: scale(1.1); opacity: 1; }
+    66% { transform: scale(1); opacity: 1; }
+}
+
+/* --- Main App Container --- */
+.container {
+    background-color: var(--primary-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    height: calc(100vh - 20px);
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.8s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* --- Title Bar --- */
+.title-bar {
+    background-color: var(--secondary-bg);
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom: 2px solid var(--border-color);
+    -webkit-app-region: drag;
+    position: relative;
+    z-index: 10;
+}
+
+.title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    color: var(--accent-color);
+    text-shadow: 2px 2px 0 #000;
+}
+
+.title-bar-spacer {
+    flex-grow: 1;
+    -webkit-app-region: drag;
+}
+
+.title-bar-btns { -webkit-app-region: no-drag; }
+.title-bar-btn {
+    background: none; border: 1px solid var(--border-color); color: var(--text-color);
+    font-size: 18px; width: 28px; height: 28px; border-radius: 5px;
+    margin-left: 5px; cursor: pointer; transition: background-color 0.2s, color 0.2s;
+}
+.title-bar-btn:hover { background-color: var(--accent-color); color: var(--primary-bg); }
+#close-btn:hover { background-color: #e84a5f; color: #fff; }
+
+/* --- Navigation & Action Buttons --- */
+.nav-controls {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 8px;
+    z-index: 1100; 
+    -webkit-app-region: no-drag;
+}
+
+.nav-btn {
+    background: transparent;
+    border: none;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+}
+.nav-btn:hover {
+    transform: scale(1.15);
+    filter: brightness(1.2);
+}
+.nav-btn.hidden {
+    opacity: 0.3;
+    pointer-events: none;
+}
+.nav-btn svg {
+    width: 100%;
+    height: 100%;
+    fill: var(--accent-color);
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5));
+}
+
+.action-btn {
+    background-color: var(--accent-color);
+    color: var(--primary-bg);
+    border: 2px solid var(--secondary-bg);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 10px;
+}
+.action-btn:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+}
+.action-btn:disabled {
+    filter: grayscale(1);
+    pointer-events: none;
+}
+
+.map-controls {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1100;
+    display: flex;
+    gap: 8px;
+}
+
+.map-action-btn {
+    background: rgba(0,0,0,0.2);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+}
+.map-action-btn:hover {
+    background: var(--secondary-bg);
+    transform: scale(1.1);
+}
+.map-action-btn.clear:hover {
+    background-color: #e74c3c;
+}
+.map-action-btn svg {
+    width: 100%;
+    height: 100%;
+    fill: var(--accent-color);
+}
+
+/* --- View Container --- */
+.view-container {
+    flex-grow: 1;
+    position: relative;
+    border-style: solid;
+    border-width: 20px;
+    border-image-source: url('./assets/sprites/border.png');
+    border-image-slice: 24 fill;
+    border-image-repeat: stretch;
+    background-color: var(--primary-bg);
+    overflow: hidden;
+}
+
+.views-wrapper {
+    display: flex;
+    width: 300%;
+    height: 100%;
+    transform: translateX(-33.3333%);
+    transition: transform 0.4s ease-in-out;
+}
+
+.view {
+    width: 33.3333%;
+    height: 100%;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.views-wrapper.show-pika { transform: translateX(0%); }
+.views-wrapper.show-motivator { transform: translateX(-33.3333%); }
+.views-wrapper.show-map { transform: translateX(-66.6666%); }
+
+/* --- Pika View --- */
+.pika-controls {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1100;
+}
+
+.pika-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#idle-pika-sprite {
+    width: 40px;
+    height: 40px;
+    background-image: url('./assets/sprites/idle.png');
+    transform: scale(4);
+    image-rendering: pixelated;
+    animation: pika-idle 0.6s steps(4) infinite;
+    transition: transform 0.2s;
+    cursor: url('./assets/sprites/hand.png'), pointer;
+    z-index: 2; /* Pikachu is in front of the lightning */
+}
+#idle-pika-sprite:hover {
+    transform: scale(4.2);
+}
+
+#idle-pika-sprite.thunderbolt-animation {
+    width: 42px;
+    height: 42px;
+    background-image: url('./assets/sprites/thunderbolt.png');
+    animation: pika-thunderbolt 0.4s steps(3) 1;
+}
+
+.pika-text {
+    display: none;
+}
+
+/* --- UPDATED Lightning Effect Styles --- */
+.lightning-container {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    z-index: 1; /* Lightning is behind Pikachu */
+    /* Position the container lower, near Pikachu's feet */
+    bottom: 120px; 
+}
+
+.lightning-frame {
+    position: absolute;
+    opacity: 0;
+    image-rendering: pixelated;
+    /* Doubled the scale for a bigger effect */
+    transform: scale(6); 
+}
+
+#lightning-start {
+    width: 32px;
+    height: 43px;
+}
+#lightning-mid {
+    width: 62px;
+    height: 30px;
+}
+#lightning-final {
+    width: 126px;
+    height: 30px;
+}
+
+.lightning-container.is-attacking #lightning-start {
+    animation: lightning-burst 0.4s ease-out 1;
+    animation-delay: 0s;
+}
+.lightning-container.is-attacking #lightning-mid {
+    animation: lightning-burst 0.4s ease-out 1;
+    animation-delay: 0.1s;
+}
+.lightning-container.is-attacking #lightning-final {
+    animation: lightning-burst 0.4s ease-out 1;
+    animation-delay: 0.2s;
+}
+
+
+/* --- Motivator View Content --- */
+.content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+.wifi-icon-container { margin-bottom: 10px; color: var(--accent-color); animation: pulse 2s infinite ease-in-out; }
+.wifi-icon-container svg { width: 60px; height: 60px; }
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+.wifi-info { color: var(--text-color); font-size: 18px; opacity: 0.8; }
+.wifi-strength {
+    color: var(--accent-color);
+    font-size: 16px;
+    opacity: 0.7;
+    margin-bottom: 20px;
+    min-height: 20px;
+}
+.quote { font-size: 24px; line-height: 1.5; min-height: 100px; margin-bottom: 20px; }
+
+/* --- Map View --- */
+#map {
+    height: 100%;
+    width: 100%;
+    background-color: #1d1d1d;
+    border-radius: 8px;
+}
+.leaflet-popup-content-wrapper, .leaflet-popup-tip, .leaflet-tooltip {
+    background: var(--secondary-bg) !important;
+    color: var(--text-color) !important;
+    font-family: 'VT323', monospace !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.4) !important;
+}
+#route-info-panel {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background-color: rgba(45, 45, 45, 0.85);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px;
+    z-index: 1000;
+    font-size: 16px;
+    text-align: center;
+}
+.map-marker {
+    width: 24px !important;
+    height: 24px !important;
+    border-radius: 50%;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid white;
+}
+.map-marker.start { background-color: #27ae60; }
+.map-marker.end { background-color: #e74c3c; }
+
+/* --- Testing Notice / Notification --- */
+#testing-notice {
+    position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%);
+    background-color: rgba(255, 200, 87, 0.8); color: #2d2d2d; padding: 5px 15px;
+    border-radius: 20px; font-size: 14px; font-weight: bold; opacity: 0;
+    transition: opacity 0.5s ease-in-out; pointer-events: none; z-index: 2000;
+}
+#testing-notice.success { background-color: #27ae60; color: white; }
+#testing-notice.error { background-color: #e84a5f; color: white; }
+#testing-notice.info { background-color: #3498db; color: white; }
