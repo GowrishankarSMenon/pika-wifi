@@ -33,18 +33,46 @@ We read your signal strength, match it with a perfectly motivational quote, and 
 
 ### Implementation
 **For Software:**
-```bash
-# Installation
-# Download (Recommended)
-Download the executable installer: [Pika Wifi Setup 1.0.0.exe](https://drive.google.com/drive/folders/137EiCXeO1HPJyjuNOaPSheLp9zxXSO1-?usp=sharing)
 
-# Development Setup
+## 📥 Download & Installation
+
+### Quick Download (Recommended)
+**Download the executable installer:** [Pika Wifi Setup 1.0.0.exe](https://drive.google.com/drive/folders/137EiCXeO1HPJyjuNOaPSheLp9zxXSO1-?usp=sharing)
+
+### 🚨 Important: Handling Security Warnings
+
+Since this is an unsigned executable, you'll encounter security warnings. Here's how to download and install safely:
+
+#### **Google Drive Download Warning:**
+1. Click the download link above
+2. Navigate to the `Pika Wifi Setup 1.0.0.exe` file
+3. Click on the file to select it
+4. Click the **Download** button (↓ icon) at the top
+5. **When you see "Google Drive can't scan this file for viruses":**
+   - Click **"Download anyway"** button
+   - The file is safe - this warning appears for any executable over 100MB
+
+#### **Windows Security Warning (SmartScreen):**
+1. **When Windows shows "Microsoft Defender SmartScreen prevented an unrecognized app":**
+   - Click **"More info"** link
+   - Click **"Run anyway"** button
+   - This happens because the app isn't digitally signed (costs money we don't have! 💸)
+
+#### **Windows Installation Security:**
+1. **If Windows shows "Do you want to allow this app to make changes?":**
+   - Click **"Yes"** to proceed with installation
+   - This is normal for any installer
+
+### 🛠️ Development Setup (Alternative)
+```bash
+# Clone and run from source
 git clone https://github.com/GowrishankarSMenon/pika-wifi.git
 cd pika-wifi
 npm install
 
 # Run from Source
 npm start
+```
 
 ## 🧪 Testing & Simulation
 While running the app from the source (`npm start`), you can use the following keyboard shortcuts to simulate different conditions:
@@ -61,7 +89,6 @@ While running the app from the source (`npm start`), you can use the following k
 * `6`: Simulates your location as **London** 🎡.
 * `9`: Resets to your **real** IP-based location.
 * `L`: Manually triggers the "Log Location" action.
-```
 
 ### Project Documentation
 **For Software:**
@@ -91,7 +118,7 @@ While running the app from the source (`npm start`), you can use the following k
 N/A (This is a software-only project, but your Wi-Fi router's circuit is doing the heavy lifting)
 
 #### Build Photos
-![Executable File]([https://raw.githubusercontent.com/GowrishankarSMenon/pika-wifi/main/readmeimages/build1.jpg](https://drive.google.com/file/d/1ffQeKaDJaj-iDS6l5SxqKFb8JGQ22TBx/view?usp=sharing))
+![Executable File](https://drive.google.com/file/d/1ffQeKaDJaj-iDS6l5SxqKFb8JGQ22TBx/view?usp=sharing)
 *The final executable installer file (Pika Wifi Setup 1.0.0.exe) created using electron-builder, complete with Pikachu icon and "Connecting to Wi-Fi..." ASCII art*
 
 ![Installation Location](https://drive.google.com/file/d/1ffQeKaDJaj-iDS6l5SxqKFb8JGQ22TBx/view?usp=sharing)
